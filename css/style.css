@@ -191,7 +191,9 @@
   .bar-outer.right {
     transition-delay: 0;
   }
-/* 
-  .ssov, .mentions {
-      display: "none";
-  } */
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
