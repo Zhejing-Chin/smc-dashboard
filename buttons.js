@@ -7,7 +7,6 @@ var choose = 0;
 let current = 1;
 
 function show_images(choose) {
-    console.log(choose)
     // daily / weekly option
     if (choose !== 0) {
         chose = choose-1;
@@ -16,25 +15,25 @@ function show_images(choose) {
         } else {
             unchose = 1;
         }
-        console.log(chose, unchose)
+        // button - metrics
         a = document.getElementsByClassName(period[chose]);
-        b = document.getElementById(period[chose]);
         c = document.getElementsByClassName(period[unchose]);
+
+        // button - daily, weekly
+        b = document.getElementById(period[chose]);
         d = document.getElementById(period[unchose]);
-
         if (metrics[current-1] === "retweets") {
-            console.log(b, d)
+            b = document.getElementById(period[chose]+"1");
+            d = document.getElementById(period[unchose]+"1");
         }
-
-        // console.log(a, b, c, d)
-
+        
         for (j = 0; j < a.length; j++) {
             a[j].style.display = "block";
         }
-        
+
         b.style.border = "3px solid navy";
         b.style.borderRadius = "25px";
-
+ 
         for (j = 0; j < c.length; j++) {
             c[j].style.display = "none";
         }
@@ -84,7 +83,6 @@ current = option.index;
 if (metrics[current-1] === "mentions" || metrics[current-1] === "retweets"){
     choose = 1
 }
-console.log(metrics[current-1])
 
 show_images(choose)
 
@@ -95,7 +93,6 @@ choose = option.index;
 if (metrics[current-1] === "retweets") {
     choose = choose - 2;
 }
-console.log("option index", choose)
 
 show_images(choose)
 
