@@ -15,69 +15,65 @@
     <center>
     <div class="container">
         <div class="bar bar-grey">
+          <div class="option" id="followergrowth">Follower Growth</div>
           <div class="option" id="ssov">SSoV</div>
           <div class="option" id="mentions">Mentions</div>
-          <div class="option">THREE</div>
+          <div class="option" id="retweets">Retweets</div>
+          <div class="option" id="amplification">Amplification Rate</div>
+          <div class="option" id="applause">Applause Rate</div>
+          <div class="option" id="tophashtag">Top Hashtags</div>
+          <div class="option" id="topmention">Top Mentions</div>
         </div>
 
-        <div class="bar-outer">
-          <div class="bar bar-purple">
-            <div class="option" id="ssov">SSoV</div>
-            <div class="option" id="mentions">Mentions</div>
-            <div class="option">THREE</div>
-          </div>
-        </div>
     </div>
     </center>
 
-    <img class="ssov" src="Charts/ssov.png" alt="SSoV" width="700" height="400">
-    <img class="mentions" src="Charts/Daily Mentions of Different Luxury Brands.png" alt="daily mentions" width="700" height="400">
-    <img class="mentions" src="Charts/LineChart - Weekly Mentions of Different Luxury Brands.png" alt="weekly mentions" width="700" height="400">
+    <div class="followergrowth">
+        <img src="Charts/follower_dior.png" alt="Follower Growth Dior" width="700" height="400">
+        <img src="Charts/follower_lv.png" alt="Follower Growth Louis Vuitton" width="700" height="400">
+        <img src="Charts/follower_prada.png" alt="Follower Growth Prada" width="700" height="400">
+        <img src="Charts/follower_gucci.png" alt="Follower Growth Gucci" width="700" height="400">
+    </div>
+
+    <div class="ssov">
+        <img src="Charts/ssov.png" alt="SSoV" width="700" height="400">
+    </div>
+    
+    <div class="mentions">
+        <img src="Charts/Daily Mentions of Different Luxury Brands.png" alt="daily mentions" width="700" height="400">
+        <img src="Charts/LineChart - Weekly Mentions of Different Luxury Brands.png" alt="weekly mentions" width="700" height="400">
+        <img src="Charts/Weekly Mentions of Different Luxury Brands.png" alt="weekly mentions" width="700" height="400">
+    </div>
+
+    <div class="retweets">
+        <img src="Charts/Total Retweets/Daily Retweets between different brands.png" alt="daily mentions" width="700" height="400">
+        <img src="Charts/Total Retweets/Dior Daily Retweets.png" alt="daily mentions" width="700" height="400">
+        <img src="Charts/Total Retweets/Gucci Daily Retweets.png" alt="daily mentions" width="700" height="400">
+        <img src="Charts/Total Retweets/LV Daily Retweets.png" alt="daily mentions" width="700" height="400">
+        <img src="Charts/Total Retweets/Prada Daily Retweets.png" alt="daily mentions" width="700" height="400">
+    </div>
+
+    <div class="amplification">
+        <img src="Charts/Amplification_Individual.png" alt="amplification rate" width="700" height="400">
+        <img src="Charts/Amplification_All.png" alt="amplification rate" width="700" height="400">
+    </div>
+
+    <div class="applause">
+        <img src="Charts/Applause_Individual.png" alt="applause rate" width="700" height="400">
+        <img src="Charts/Applause_All.png" alt="applause rate" width="700" height="400">
+    </div>
+
+    <div class="tophashtag">
+        <img src="Charts/top_hashtags.PNG" alt="Top Hashtags" width="500" height="600">
+    </div>
+
+    <div class="topmention">
+        <img src="Charts/top_mentions.PNG" alt="Top Mentions" width="400" height="600">
+    </div>
+    
     <!-- <img src="Charts/Weekly Mentions of Different Luxury Brands.png" alt="SSoV" width="700" height="400"> -->
 
-    <script>
-        const metrics = ["ssov", "mentions"]
-        const barOuter = document.querySelector(".bar-outer");
-        const options = document.querySelectorAll(".bar-grey .option");
-        let current = 1;
-        // var showImgs = document.getElementsByClassName(metrics[current-1])[0];
-        // console.log(showImgs)
-
-        function show_images() {
-            for (i = 0; i < metrics.length; i++) {
-                if (i !== current-1) {
-                    x = document.getElementsByClassName(metrics[i]);
-                    for (j = 0; j < x.length; j++) {
-                        x[j].style.display = "none";
-                    }
-                } else {
-                    x = document.getElementsByClassName(metrics[i]);
-                    for (j = 0; j < x.length; j++) {
-                        x[j].style.display = "block";
-                    }
-                }
-            }
-        }
-
-        show_images()
-        
-        options.forEach((option, i) => (option.index = i + 1));
-        options.forEach(option =>
-                        option.addEventListener("click", function() {
-        barOuter.className = "bar-outer";
-        barOuter.classList.add(`pos${option.index}`);
-        
-        if (option.index > current) {
-            barOuter.classList.add("right");
-        } else if (option.index < current) {
-            barOuter.classList.add("left");
-        }
-        current = option.index;
-        console.log(metrics[current-1])
-        show_images()
-
-        }));
-    </script>
+    <script src="buttons.js"></script>
 
 </body>
 </html>
