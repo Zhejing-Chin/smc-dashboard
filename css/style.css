@@ -96,13 +96,14 @@
 .box {
   box-sizing: border-box;
   float: left;
-  width: 30%;
+  width: 40%;
   height: 50%;
+  overflow:box;
 }
 
 .box2 {
   box-sizing: border-box;
   float: left;
-  width: 20%;
-  overflow:auto;
+  width: 20.5%;
+  overflow:box;
 }
