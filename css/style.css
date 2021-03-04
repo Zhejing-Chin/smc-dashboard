@@ -14,7 +14,7 @@
     border-radius: 50px;
     justify-content: center;
     position: relative;
-    width: 1050px;
+    width: 1290px;
   }
 
   .container2 {
@@ -92,3 +92,17 @@
   #keywords tbody tr td.lalign {
     text-align: left;
   }
+
+.box {
+  box-sizing: border-box;
+  float: left;
+  width: 30%;
+  height: 50%;
+}
+
+.box2 {
+  box-sizing: border-box;
+  float: left;
+  width: 20%;
+  overflow:auto;
+}
